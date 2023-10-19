@@ -110,8 +110,6 @@ int main()
       if(ok) cout << "Case "<<q++<<": "<<"Yes"<<endl;
       else if(!ok) cout << "Case "<<q++<<": "<<"No"<<endl;
 
-
-
     }
     return 0;
 }
