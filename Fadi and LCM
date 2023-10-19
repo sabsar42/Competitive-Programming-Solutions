@@ -1,0 +1,81 @@
+// Bismillah hir-rahman nir-raheem
+#include<bits/stdc++.h>
+#include <tuple>
+using namespace std;
+#define   ll          long long
+#define   ld          long double
+#define   pb          push_back
+#define   ff          first
+#define   ss          second
+#define   tc()        ll t; cin>>t; while(t--)
+#define   endll       "\n"
+#define   debug(x)    cout << " >> " << #x << " : " << x << endl
+#define   yes         cout <<"Yes\n"
+#define   no          cout << "No\n"
+#define   PI          3.141592653589793238
+#define   all(v)      (v).begin(),(v).end()
+#define   _rasbaris_  ios_base :: sync_with_stdio(0);cin.tie(0);cout.tie(0);
+// cout << "Case "<<q<<": ";
+using namespace std;
+const ll M = 1e18;
+ll MOD =1e9;
+// 4 direction
+int dx[] = {1, -1, 0, 0};
+int dy[] = {0, 0, 1, -1};
+
+//Binary Exponentiation
+ll power(ll base, ll n){
+
+  ll res = 1 ;
+  while(n){
+    if(n%2==1){
+        res=(res*base);
+        n-=1;
+    }
+    else{
+        base=(base*base);
+        n/=2;
+    }
+  }
+  return res;
+
+}
+
+int main()
+{
+    _rasbaris_
+
+    //tc()
+    {
+
+
+     ll n ; cin >> n ;
+     ll a,b;
+     ll x,y;
+
+     for(ll i=1; i<=sqrt(n) ;i++){
+        if(n%i==0){
+            a=i;
+            b=n/i;
+            ll lcm = (a*b)/__gcd(a,b);
+            if(lcm==n){
+                x=i;
+                y=n/i;
+                //debug(a);
+               // debug(b);
+            }
+
+        }
+     }
+
+     cout << x <<" "<<y;
+     //else cout << x << ' '<<y;
+    // cout << 1 <<' '<<n;
+
+
+
+    }
+    return 0;
+}
+
+
