@@ -1,0 +1,58 @@
+// Bismillah hir-rahman nir-raheem
+#include<bits/stdc++.h>
+#include <tuple>
+using namespace std;
+#define   ll          long long
+#define   pb          push_back
+#define   ff          first
+#define   ss          second
+#define   tc()        ll t; cin>>t; while(t--)
+#define   endll       "\n"
+#define   debug(x)    cout << " >> " << #x << " : " << x << endl
+#define   yes         cout <<"YES\n"
+#define   no          cout << "NO\n"
+#define   PI          3.141592653589793238
+#define   all(v)      (v).begin(),(v).end()
+#define   _rasbaris_  ios_base :: sync_with_stdio(0);cin.tie(0);cout.tie(0);
+// cout << "Case "<<q<<": ";
+using namespace std;
+const ll M = 1e5;
+
+// 4 direction
+int dx[] = {1, -1, 0, 0};
+int dy[] = {0, 0, 1, -1};
+
+
+
+int main()
+{
+    _rasbaris_
+
+    ll q = 1;
+    tc(){
+     ll n ; cin >> n ;
+     ll k ; cin >> k ;
+     ll FirstKSum = (k*(k+1))/2;
+     ll x  = 2*k;
+     ll SecKSum  = ((x*(x+1))/2) - FirstKSum ;
+     ll Fdiv = n/(2*k);
+     ll Sdiv = Fdiv;
+
+     ll i=k*(2*k);
+     ll refer = n/(2*k);
+     ll sumNum = (refer*(refer-1))/2;
+
+     ll Fsum=0;
+     Fsum+=(FirstKSum*refer)+((i)*(sumNum));
+
+     ll Ssum=0;
+     Ssum+=(SecKSum*refer)+((i)*(sumNum));
+
+     ll ans = Ssum-Fsum;
+     cout << "Case "<<q++<<": "<<ans<<endl;
+
+    }
+
+    return 0;
+}
+
