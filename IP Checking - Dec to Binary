@@ -1,0 +1,118 @@
+// Bismillah hir-rahman nir-raheem
+#include<bits/stdc++.h>
+#include <tuple>
+using namespace std;
+#define   ll          long long
+#define   pb          push_back
+#define   ff          first
+#define   ss          second
+#define   tc()        ll t; cin>>t; while(t--)
+#define   endll       "\n"
+#define   debug(x)    cout << " >> " << #x << " : " << x << endl
+#define   yes         cout <<"YES\n"
+#define   no          cout << "NO\n"
+#define   PI          3.141592653589793238
+#define   all(v)      (v).begin(),(v).end()
+#define   _rasbaris_  ios_base :: sync_with_stdio(0);cin.tie(0);cout.tie(0);
+// cout << "Case "<<q<<": ";
+using namespace std;
+const ll M = 1e5;
+
+// 4 direction
+int dx[] = {1, -1, 0, 0};
+int dy[] = {0, 0, 1, -1};
+
+string DecBin(int num)
+{
+    bitset<8> binary(num);
+    string binaryStr = binary.to_string();
+
+    return binaryStr;
+}
+
+
+
+int main()
+{
+    _rasbaris_
+
+    ll q = 1;
+    tc()
+    {
+
+     string binString = "";
+
+     string s ; cin >> s;
+     string k ; cin >> k ;
+     s+='.';
+     k+='.';
+
+     vector<string>vF;
+     vector<string>vS;
+     vector<string>vB;
+
+     for(ll i=0 ;s[i]; i++){
+        if(s[i]=='.'){
+            vF.push_back(binString);
+            binString="";
+            continue;
+        }
+        binString+=s[i];
+     }
+
+     binString = "";
+     for(ll i=0 ;k[i]; i++){
+        if(k[i]=='.'){
+            vS.push_back(binString);
+            binString="";
+            continue;
+        }
+        binString+=k[i];
+     }
+
+    for(ll i=0;i<vF.size();i++){
+        string ch = vF[i];
+        ll stSz = vF[i].size();
+        ll numA = 0;
+        for(ll j=0;j<vF[i].size();j++){
+            ll x = vF[i][j]-'0';
+            if(stSz==3){
+                numA += x*100;
+                stSz--;
+            }
+            else if(stSz==2){
+                numA += x*10;
+                stSz--;
+            }
+            else if(stSz==1){
+                numA += x*1;
+                stSz--;
+            }
+        }
+         if(numA==0){
+            vB.pb("00000000");
+         }
+         else{
+         string str = DecBin(numA);
+         vB.pb(str);
+         }
+     }
+
+      ll len = (vB.size());
+      bool ok=1;
+      for(ll i=0;i<len;i++){
+          if(vB[i]!=vS[i]){
+            ok=0;
+            break;
+          }
+      }
+
+      if(ok) cout << "Case "<<q++<<": "<<"Yes"<<endl;
+      else if(!ok) cout << "Case "<<q++<<": "<<"No"<<endl;
+
+
+
+    }
+    return 0;
+}
+
